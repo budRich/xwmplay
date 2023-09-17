@@ -1,0 +1,26 @@
+#!/bin/bash
+
+main(){
+
+  wm_path=$(command -v "$1")
+
+  [[ -x $wm_path ]] || ERX "not a valid window manager command '$*'"
+
+  set "$wm_path" "${@:2}"
+
+  Xephyr -resizeable -name Xephyr -ac -noreset :"${_o[display]:-2}" &
+
+  sleep 0.1
+
+  # https://github.com/ritave/xeventbind/
+  # https://aur.archlinux.org/packages/xeventbind-git
+  { command -v xeventbind && command -v xrandr ;} >/dev/null && {
+    DISPLAY=:"${_o[display]:-2}" xeventbind resolution xrandr >/dev/null
+  } &
+
+  DISPLAY=:"${_o[display]:-2}" I3SOCK=$(mktemp) "$@"
+  pkill -P $$
+}
+
+__dir=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")") #bashbud
+source "$__dir/_init.sh"                              #bashbud
