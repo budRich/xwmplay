@@ -4,6 +4,9 @@ This boils down to setting the environment
 variable I3SOCK to a path that doesn't conflict
 with the current session.
 
+[xwmplayd2-2023-09-19_21.28.06.webm](https://github.com/budRich/xwmplay/assets/2143465/7e5d712b-0797-4060-b7f8-126bee59e3df)
+
+
 While messing around with this I noticed that it
 was possible to tile the Xephyr window, but it
 would have the same initial resolution (equal to
