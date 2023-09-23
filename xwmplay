@@ -13,9 +13,8 @@ main(){
   sleep 0.1
 
 
-  [[ ${_o[wallpaper-command]} ]] && {
-    DISPLAY=:"${_o[display]:-2}" bash <( echo "${_o[wallpaper-command]}" )
-  }
+  [[ ${_o[wallpaper-command]} ]] \
+    && DISPLAY=:"${_o[display]:-2}" bash -c " ${_o[wallpaper-command]}"
 
   # https://github.com/ritave/xeventbind/
   { command -v xeventbind  ;} >/dev/null && {
