@@ -1,3 +1,4 @@
 --display|-d DISPLAY
+--wallpaper-command|-w COMMAND
 --help|-h
 --version|-v

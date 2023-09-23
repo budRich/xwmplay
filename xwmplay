@@ -12,13 +12,33 @@ main(){
 
   sleep 0.1
 
+
+  [[ ${_o[wallpaper-command]} ]] && {
+    DISPLAY=:"${_o[display]:-2}" bash <( echo "${_o[wallpaper-command]}" )
+  }
+
   # https://github.com/ritave/xeventbind/
-  # https://aur.archlinux.org/packages/xeventbind-git
-  { command -v xeventbind && command -v xrandr ;} >/dev/null && {
-    DISPLAY=:"${_o[display]:-2}" xeventbind resolution xrandr >/dev/null
+  { command -v xeventbind  ;} >/dev/null && {
+
+    command -v xrandr >/dev/null   && script_body+="xrandr"$'\n'
+    [[ ${_o[wallpaper-command]} ]] && script_body+="${_o[wallpaper-command]}"$'\n'
+
+    [[ $script_body ]] && {
+      temp_xeventbind_script=$(mktemp)
+      echo "$script_body" > "$temp_xeventbind_script"
+
+      chmod +x "$temp_xeventbind_script"
+
+      DISPLAY=:"${_o[display]:-2}" xeventbind resolution "$temp_xeventbind_script" >/dev/null
+    }
   } &
 
-  DISPLAY=:"${_o[display]:-2}" I3SOCK=$(mktemp) "$@"
+  tmp_i3sock=$(mktemp)
+  DISPLAY=:"${_o[display]:-2}" I3SOCK="$tmp_i3sock" "$@"
+
+  [[ -f $temp_xeventbind_script ]] && rm "$temp_xeventbind_script"
+  [[ -f $tmp_i3sock ]] && rm "$tmp_i3sock"
+
   pkill -P $$
 }
 
