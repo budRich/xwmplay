@@ -1,7 +1,7 @@
 NAME         := xwmplay
 CREATED      := 2023-09-16
-UPDATED      := 2023-09-17
-VERSION      := 0.1.2
+UPDATED      := 2023-09-23
+VERSION      := 0.1.3
 DESCRIPTION  := spawn a command in a nested X(ephyr) session
 AUTHOR       := budRich
 CONTACT      := https://github.com/budrich/i3play
