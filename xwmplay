@@ -34,11 +34,6 @@ main(){
 
   tmp_i3sock=$(mktemp)
   DISPLAY=:"${_o[display]:-2}" I3SOCK="$tmp_i3sock" "$@"
-
-  [[ -f $temp_xeventbind_script ]] && rm "$temp_xeventbind_script"
-  [[ -f $tmp_i3sock ]] && rm "$tmp_i3sock"
-
-  pkill -P $$
 }
 
 __dir=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")") #bashbud
