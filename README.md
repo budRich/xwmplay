@@ -74,15 +74,16 @@ of screenresolution is a thing.
 
 There is also the [xwmplay AUR package].
 
-[xwmplay AUR package]: https://aur.archlinux.org/xwmplay
+[xwmplay AUR package]: https://aur.archlinux.org/packages/xwmplay
 
 ## usage
 
 ```
 xwmplay [OPTIONS] -- COMMAND
--d, --display DISPLAY | set X display for COMMAND (defaults to 2) 
--h, --help            | print help and exit  
--v, --version         | print version info and exit  
+-d, --display           DISPLAY | set X display for COMMAND (defaults to 2) 
+-h, --help                      | print help and exit  
+-v, --version                   | print version info and exit  
+-w, --wallpaper-command COMMAND | command to set wallpaper
 ```
 
 ## copyright

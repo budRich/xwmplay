@@ -24,4 +24,4 @@ of screenresolution is a thing.
 
 There is also the [xwmplay AUR package].
 
-[xwmplay AUR package]: https://aur.archlinux.org/xwmplay
+[xwmplay AUR package]: https://aur.archlinux.org/packages/xwmplay
