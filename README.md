@@ -82,6 +82,7 @@ There is also the [xwmplay AUR package].
 xwmplay [OPTIONS] -- COMMAND
 -d, --display           DISPLAY | set X display for COMMAND (defaults to 2) 
 -h, --help                      | print help and exit  
+--i3-socket             PATH    | path to socket, defaults to `mktemp`  
 -v, --version                   | print version info and exit  
 -w, --wallpaper-command COMMAND | command to set wallpaper
 ```

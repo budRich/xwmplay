@@ -1,6 +1,6 @@
 NAME         := xwmplay
 CREATED      := 2023-09-16
-UPDATED      := 2023-09-23
+UPDATED      := 2023-10-08
 VERSION      := 0.1.5
 DESCRIPTION  := spawn a command in a nested X(ephyr) session
 AUTHOR       := budRich

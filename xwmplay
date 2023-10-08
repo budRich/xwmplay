@@ -34,7 +34,7 @@ main(){
 
   sleep .1
 
-  tmp_i3sock=$(mktemp)
+  tmp_i3sock=${_o[i3-socket]:-$(mktemp)}
   DISPLAY=:"${_o[display]:-2}" I3SOCK="$tmp_i3sock" "$@"
 }
 

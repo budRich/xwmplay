@@ -1,4 +1,5 @@
 --display|-d DISPLAY
 --wallpaper-command|-w COMMAND
+--i3-socket PATH
 --help|-h
 --version|-v
