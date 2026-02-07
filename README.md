@@ -1,3 +1,5 @@
+# MAINTAINED AT https://git.budlabs.xyz/bud/xwmplay
+
 Initially i created this script to *properly* spawn
 **i3wm** in a **Xephyr** window on a i3wm host session.
 This boils down to setting the environment
